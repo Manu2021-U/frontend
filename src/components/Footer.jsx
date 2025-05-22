@@ -1,15 +1,27 @@
-import React from 'react'
-import footerLogo  from "../assets/footer-logo.png"
-
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
+import React, { useState } from 'react';
+import footerLogo from "../assets/footer-logo.png";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState(''); // "", "subscribed", "invalid"
+
+  const handleSubscribe = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailRegex.test(email)) {
+      setStatus('subscribed');
+    } else {
+      setStatus('invalid');
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-10 px-4">
       {/* Top Section */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Left Side - Logo and Nav */}
-        <div className="md:w-1/2 w-full">
+        {/*<div className="md:w-1/2 w-full">
           <img src={footerLogo} alt="Logo" className="mb-5 w-36" />
           <ul className="flex flex-col md:flex-row gap-4">
             <li><a href="#home" className="hover:text-primary">Home</a></li>
@@ -17,7 +29,7 @@ const Footer = () => {
             <li><a href="#about" className="hover:text-primary">About Us</a></li>
             <li><a href="#contact" className="hover:text-primary">Contact</a></li>
           </ul>
-        </div>
+        </div>*/}
 
         {/* Right Side - Newsletter */}
         <div className="md:w-1/2 w-full">
@@ -27,13 +39,24 @@ const Footer = () => {
           <div className="flex">
             <input
               type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setStatus('');
+              }}
               placeholder="Enter your email"
               className="w-full px-4 py-2 rounded-l-md text-black"
             />
-            <button className="bg-primary px-6 py-2 rounded-r-md hover:bg-primary-dark">
-              Subscribe
+            <button
+              onClick={handleSubscribe}
+              className="bg-primary px-6 py-2 rounded-r-md hover:bg-primary-dark"
+            >
+              {status === 'subscribed' ? "Subscribed" : "Subscribe"}
             </button>
           </div>
+          {status === 'invalid' && (
+            <p className="text-red-500 mt-2">Please enter a valid email address.</p>
+          )}
         </div>
       </div>
 
@@ -59,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
