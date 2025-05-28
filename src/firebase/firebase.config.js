@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth"
 // Your web app's Firebase configuration
 const firebaseConfig = {
 
-  apiKey: "AAIzaSyD7Qbjq8pIXEzB745OzkceD_9j4_vDUvLs",
+  apiKey: "AIzaSyD7Qbjq8pIXEzB745OzkceD_9j4_vDUvLs",
 
   authDomain: "mindstore-e1c69.firebaseapp.com",
 
