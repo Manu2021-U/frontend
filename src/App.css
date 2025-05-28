@@ -1,40 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Font family classes */
+.font-primary {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.font-secondary {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Swiper styles */
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next {
+  @apply bg-white p-5 rounded-full z-50 shadow-md;
+  right: 20px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px !important;
+  color: #333 !important;
+  font-weight: bold;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary px-12 py-2 rounded-md text-base font-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .swiper-button-next {
+    @apply p-3;
+    right: 10px !important;
   }
   
-  .swiper-slide {
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  .swiper-button-next::after {
+    font-size: 14px !important;
   }
   
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .btn-primary {
+    @apply px-8 py-1.5 text-sm;
   }
-
- .swiper-button-prev {
-    display: none !important;
- }
- .swiper-button-next{
-    @apply bg-white p-5 rounded-full z-50 shadow-md
- }
-
- .swiper-button-prev:after, .swiper-button-next:after{
-    font-size: 16px !important;
- }
-
- .btn-primary {
-    @apply bg-primary  px-12 py-2 rounded-md text-base font-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer
- }
-
-.html{
-   scroll-behavior: smooth;
 }

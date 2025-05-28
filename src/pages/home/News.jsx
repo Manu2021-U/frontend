@@ -16,40 +16,38 @@ import { Link } from 'react-router-dom';
 const news = [
     {
         "id": 1,
-        "title": "Global Climate Summit Calls for Urgent Action",
-        "description": "World leaders gather at the Global Climate Summit to discuss urgent strategies to combat climate change, focusing on reducing carbon emissions and fostering renewable energy solutions.",
-        "image": news1
+        "title": "NASA Interns Conduct Aerospace Research in Microgravity",
+        "description": "NASA interns are working on groundbreaking aerospace research projects in microgravity environments, contributing to future space exploration.",
+        "image": news1,
+        "link": "https://science.nasa.gov/learning-resources/for-colleges-universities/nasa-stem-projects/nasa-interns-conduct-aerospace-research-in-microgravity/"
     },
     {
         "id": 2,
-        "title": "Breakthrough in AI Technology Announced",
-        "description": "A major breakthrough in artificial intelligence has been announced by researchers, with new advancements promising to revolutionize industries from healthcare to finance.",
-        "image": news2
+        "title": "South City Mall Bookshop Goes Into Liquidation",
+        "description": "A popular bookshop in South City Mall has entered liquidation, marking another casualty in the changing retail landscape for physical bookstores.",
+        "image": news2,
+        "link": "https://www.thepress.co.nz/nz-news/360703103/south-city-mall-bookshop-goes-liquidation"
     },
     {
         "id": 3,
-        "title": "New Space Mission Aims to Explore Distant Galaxies",
-        "description": "NASA has unveiled plans for a new space mission that will aim to explore distant galaxies, with hopes of uncovering insights into the origins of the universe.",
-        "image": news3
+        "title": "Google Faces Antitrust Lawsuit as AI Chip Race Heats Up",
+        "description": "The DOJ files antitrust charges against Google while tech giants like Nvidia and Meta invest billions in AI chip development to power next-gen AI systems.",
+        "image": news3,
+        "link": "https://qz.com/google-antitrust-doj-nvidia-ai-chips-mark-zuckerberg-ai-1851779976"
     },
     {
         "id": 4,
-        "title": "Stock Markets Reach Record Highs Amid Economic Recovery",
-        "description": "Global stock markets have reached record highs as signs of economic recovery continue to emerge following the challenges posed by the global pandemic.",
-        "image": news4
-    },
-    {
-        "id": 5,
-        "title": "Innovative New Smartphone Released by Leading Tech Company",
-        "description": "A leading tech company has released its latest smartphone model, featuring cutting-edge technology, improved battery life, and a sleek new design.",
-        "image": news2
+        "title": "Stock Markets Watch Nvidia Earnings Closely",
+        "description": "Investors await Nvidia's earnings report as stock markets show mixed signals, with tech stocks particularly sensitive to AI industry developments.",
+        "image": news4,
+        "link": "https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-futures-slip-with-all-eyes-on-nvidia-earnings-233141858.html"
     }
 ]
 
 const News = () => {
   return (
     <div className='py-16'>
-        <h2 className='text-3xl font-semibold mb-6'>News </h2>
+        <h2 className='text-3xl font-semibold mb-6'>News</h2>
 
         <Swiper
         slidesPerView={1}
@@ -76,18 +74,18 @@ const News = () => {
         {
             news.map((item, index) => (
                 <SwiperSlide key={index}>
-                    <div className='flex flex-col sm:flex-row sm:justify-between items-center gap-12'>
+                    <div className='flex flex-col sm:flex-row sm:justify-between items-center gap-12 h-full'>
                         {/* content */}
-                        <div className='py-4'>
-                            <Link to="/">
-                                 <h3 className='text-lg font-medium hover:text-blue-500 mb-4'>{item.title}</h3>
-                            </Link>
+                        <div className='py-4 h-full flex flex-col'>
+                            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                                 <h3 className='text-lg font-medium hover:text-blue-500 mb-4 line-clamp-2'>{item.title}</h3>
+                            </a>
                             <div className='w-12 h-[4px] bg-primary mb-5'></div>
-                            <p className='text-sm text-gray-600'>{item.description}</p>
+                            <p className='text-sm text-gray-600 line-clamp-3'>{item.description}</p>
                         </div>
 
                         <div className='flex-shrink-0'>
-                            <img src={item.image} alt=""  className='w-full object-cover'/>
+                            <img src={item.image} alt="" className='w-full object-cover'/>
                         </div>
                     </div>
                 </SwiperSlide>

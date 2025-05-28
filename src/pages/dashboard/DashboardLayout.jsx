@@ -17,8 +17,8 @@ const DashboardLayout = () => {
   return (
     <section className="flex md:bg-gray-100 min-h-screen overflow-hidden">
     <aside className="hidden sm:flex sm:flex-col">
-      <a href="/" className="inline-flex items-center justify-center h-20 w-20 bg-purple-600 hover:bg-purple-500 focus:bg-purple-500">
-        <img src="/fav-icon.png" alt="" />
+      <a href="/" className="inline-flex items-center justify-center h-20 w-20 bg-black-600 hover:bg-purple-500 focus:bg-purple-500">
+        <img src="/favicon.svg" alt="" />
       </a>
       <div className="flex-grow flex flex-col justify-between text-gray-500 bg-gray-800">
         <nav className="flex flex-col mx-4 my-6 space-y-4">
