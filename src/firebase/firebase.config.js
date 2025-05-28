@@ -7,17 +7,17 @@ import { getAuth } from "firebase/auth"
 // Your web app's Firebase configuration
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDWiBYNcDEWdybNndxtzT84mRYW3mwnJI4",
+  apiKey: "AAIzaSyD7Qbjq8pIXEzB745OzkceD_9j4_vDUvLs",
 
-  authDomain: "book-store-mern-app-68388.firebaseapp.com",
+  authDomain: "mindstore-e1c69.firebaseapp.com",
 
-  projectId: "book-store-mern-app-68388",
+  projectId: "mindstore-e1c69",
 
-  storageBucket: "book-store-mern-app-68388.firebasestorage.app",
+  storageBucket: "mindstore-e1c69.firebasestorage.app",
 
-  messagingSenderId: "178545883269",
+  messagingSenderId: "271532225505",
 
-  appId: "1:178545883269:web:cd88fe610f70a7c6fb51ec"
+  appId: "1:271532225505:web:9e75fc7f99665095ccd8a0"
 
 };
 
